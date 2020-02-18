@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: 'Raleway', sans-serif;
   background-color: bisque;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,13 +23,36 @@ body {
           align-items: center;
 }
 
-input {
+main {
+  text-align: center;
+  border: solid 2px black;
+  padding: 15px;
+}
+
+main input {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding: 5px;
+  font-size: 24px;
   width: 300px;
   height: 70px;
 }
 
-button {
+main button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
   width: 300px;
   height: 70px;
+}
+
+main button:hover {
+  background-color: beige;
+}
+
+main p {
+  padding: 5px;
+  height: 70px;
+  border: solid 1px black;
+  font-size: 24px;
 }
 /*# sourceMappingURL=mc.css.map */

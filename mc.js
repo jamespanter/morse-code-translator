@@ -1,5 +1,4 @@
-// UI -> input text and get back morse Code
-// translate other way
+const output = document.getElementById('output');
 const morseCode = [{
         a: '._'
     },
@@ -112,19 +111,16 @@ const morseCode = [{
 
 const convertText = () => {
     const textInput = document.getElementById('text-input').value;
-    const output = document.getElementById('output');
     const arrayOfLetters = textInput.split("")
-
-    console.log(arrayOfLetters)
-
 
     const getMorseCodeValue = (letter) => {
         console.log(letter)
+        console.log(morseCode[0][letter])
+        letter = morseCode[0][letter]
+        return letter;
     }
-    arrayOfLetters.forEach(getMorseCodeValue)
 
-
-    getMorseCodeValue()
-    output.innerHTML = textInput;
-    console.log(textInput)
+    const arrayInMorse = arrayOfLetters.map(getMorseCodeValue)
+    console.log(arrayInMorse)
+    output.innerHTML = arrayInMorse.join('');
 }

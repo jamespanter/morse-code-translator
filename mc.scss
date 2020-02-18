@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: 'Raleway', sans-serif;
     background-color: bisque;
     display: flex;
     flex-direction: column;
@@ -12,12 +13,35 @@ body {
     align-items: center;
 }
 
-input {
-    width: 300px;
-    height: 70px;
-}
+main {
+    text-align: center;
+    border: solid 2px black;
+    padding: 15px;
 
-button {
-    width: 300px;
-    height: 70px;
+    input {
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        padding: 5px;
+        font-size: 24px;
+        width: 300px;
+        height: 70px;
+    }
+
+    button {
+        font-family: 'Raleway', sans-serif;
+        font-size: 24px;
+        width: 300px;
+        height: 70px;
+
+        &:hover {
+            background-color: beige;
+        }
+    }
+
+    p {
+        padding: 5px;
+        height: 70px;
+        border: solid 1px black;
+        font-size: 24px;
+    }
 }
