@@ -16,16 +16,19 @@
         <h1>Morse Code Translator</h1>
     </header>
     <main>
-        <h2 id="input-header">Text</h2>
-        <input type="text" placeholder="enter text" id="text-input">
+        <h2 id="input-header">TEXT</h2>
+        <p id="input-instructions">Use / to represent space in morse code. </br> Use a space between morse code
+            characters</p>
+        <input type="text" placeholder="enter characters" id="text-input">
         </br>
         <button onclick="switchInput()" id="switch-button">
             <span class="fas fa-exchange-alt"></span>
         </button>
-        <h2 id="output-header">Morse Code</h2>
+        <h2 id="output-header">MORSE CODE</h2>
         <p id="output"></p>
-        <button onclick="convertText()" id="translate-button">Convert</button>
+        <button onclick="convertText()" id="translate-button">Translate</button>
     </main>
+    <!-- <img src="800px-International_Morse_Code.svg.png" alt=""> -->
 </body>
 
 </html>

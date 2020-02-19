@@ -1,4 +1,5 @@
-const output = document.getElementById('output');
+const output = document.getElementById('output'),
+    instructionInput = document.getElementById('input-instructions');
 let inputHeader = document.getElementById('input-header'),
     outputHeader = document.getElementById('output-header');
 
@@ -84,35 +85,50 @@ const alphabet = [{
     "·-·-·-": ".",
     "--··--": ",",
     ' ': '    ',
+    '/': ' ',
 }];
 
 const convertText = () => {
-    if (inputHeader.innerHTML.includes('Text')) {
-        const textInput = document.getElementById('text-input').value.toLowerCase();
+    if (inputHeader.innerHTML.includes('TEXT')) {
+        let textInput = document.getElementById('text-input').value.toLowerCase();
         const arrayOfLetters = textInput.split('');
-        console.log(arrayOfLetters)
         const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
-        output.innerHTML = arrayInMorse.join('');
+        console.log(arrayInMorse)
+        output.innerHTML = arrayInMorse.join('&nbsp');
     } else {
         const textInput = document.getElementById('text-input').value.toLowerCase();
-        const arrayOfLetters = textInput.split('');
-
+        console.log(textInput)
+        let arrayOfLetters = textInput.split(' ');
+        console.log(arrayOfLetters)
         const arrayInText = arrayOfLetters.map(getTextValue);
+        console.log(arrayInText);
         output.innerHTML = arrayInText.join('');
     }
 }
 
-const getMorseCodeValue = (letter) => {
-    return morseCode[0][letter];
-}
-
-const getTextValue = (character) => {
-    return alphabet[0][character];
-}
+const getMorseCodeValue = letter => morseCode[0][letter];
+const getTextValue = character => alphabet[0][character];
 
 const switchInput = () => {
     const headerOne = inputHeader.innerHTML;
     const headerTwo = outputHeader.innerHTML;
     inputHeader.innerHTML = headerTwo;
     outputHeader.innerHTML = headerOne;
+
+    if (inputHeader.innerHTML.includes('MORSE')) {
+        instructionInput.classList.add('shown');
+    } else {
+        instructionInput.classList.remove('shown');
+    }
+
+
+    // let textInput = document.getElementById('text-input').value.toLowerCase();
+    // console.log(textInput)
+    // const inputContent = textInput;
+    // const outputContent = output.innerHTML;
+
+    // textInput = outputContent;
+    // output.innerHTML = inputContent;
+
+    // console.log(inputContent, outputContent)
 }

@@ -17,8 +17,10 @@ main {
     text-align: center;
     border: solid 2px black;
     padding: 15px;
+    border-radius: 10px;
 
     input {
+        border-radius: 10px;
         text-align: center;
         font-family: 'Raleway', sans-serif;
         padding: 5px;
@@ -30,6 +32,7 @@ main {
     }
 
     button {
+        border-radius: 10px;
         font-family: 'Raleway', sans-serif;
         font-size: 24px;
         width: 300px;
@@ -48,10 +51,19 @@ main {
         }
     }
 
-    p {
+    #output {
         padding: 5px;
         height: 70px;
         border: solid 1px black;
         font-size: 24px;
+        border-radius: 10px;
+    }
+
+    #input-instructions {
+        display: none;
+
+        &.shown {
+            display: block;
+        }
     }
 }

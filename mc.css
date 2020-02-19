@@ -27,9 +27,11 @@ main {
   text-align: center;
   border: solid 2px black;
   padding: 15px;
+  border-radius: 10px;
 }
 
 main input {
+  border-radius: 10px;
   text-align: center;
   font-family: 'Raleway', sans-serif;
   padding: 5px;
@@ -41,6 +43,7 @@ main input {
 }
 
 main button {
+  border-radius: 10px;
   font-family: 'Raleway', sans-serif;
   font-size: 24px;
   width: 300px;
@@ -60,10 +63,19 @@ main button span {
           transform: rotate(-90deg);
 }
 
-main p {
+main #output {
   padding: 5px;
   height: 70px;
   border: solid 1px black;
   font-size: 24px;
+  border-radius: 10px;
+}
+
+main #input-instructions {
+  display: none;
+}
+
+main #input-instructions.shown {
+  display: block;
 }
 /*# sourceMappingURL=mc.css.map */
