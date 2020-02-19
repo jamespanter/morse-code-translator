@@ -25,6 +25,8 @@ main {
         font-size: 24px;
         width: 300px;
         height: 70px;
+        margin-bottom: 10px;
+        border: solid 1px black;
     }
 
     button {
@@ -35,6 +37,14 @@ main {
 
         &:hover {
             background-color: beige;
+        }
+
+        &#switch-button {
+            width: 30%;
+        }
+
+        span {
+            transform: rotate(-90deg);
         }
     }
 

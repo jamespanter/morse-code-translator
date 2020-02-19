@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mc.css">
     <meta charset="UTF-8">
@@ -15,11 +16,15 @@
         <h1>Morse Code Translator</h1>
     </header>
     <main>
-        <h2>Enter message</h2>
+        <h2 id="input-header">Text</h2>
         <input type="text" placeholder="enter text" id="text-input">
-        <h2>Morse Code</h2>
+        </br>
+        <button onclick="switchInput()" id="switch-button">
+            <span class="fas fa-exchange-alt"></span>
+        </button>
+        <h2 id="output-header">Morse Code</h2>
         <p id="output"></p>
-        <button onclick="convertText()">Convert</button>
+        <button onclick="convertText()" id="translate-button">Convert</button>
     </main>
 </body>
 

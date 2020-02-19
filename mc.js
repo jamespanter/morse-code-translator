@@ -1,52 +1,118 @@
 const output = document.getElementById('output');
+let inputHeader = document.getElementById('input-header'),
+    outputHeader = document.getElementById('output-header');
+
 const morseCode = [{
-    a: '._',
-    b: '_...',
-    c: '_._.',
-    d: '_..',
+    a: '.-',
+    b: '-...',
+    c: '-.-.',
+    d: '-..',
     e: '.',
-    f: '.._.',
-    g: '__.',
+    f: '..-.',
+    g: '--.',
     h: '....',
     i: '..',
-    j: '.___',
-    k: '_._',
-    l: '._..',
-    m: '__',
-    n: '_.',
-    o: '___',
-    p: '.__.',
-    q: '__._',
-    r: '._.',
+    j: '.---',
+    k: '-.-',
+    l: '.-..',
+    m: '--',
+    n: '-.',
+    o: '---',
+    p: '.--.',
+    q: '--.-',
+    r: '.-.',
     s: '...',
-    t: '_',
-    u: '.._',
-    v: '..._',
-    w: '.__',
-    x: '_.._',
-    y: '_.__',
-    z: '__..',
-    0: '_____',
-    1: '.____',
-    2: '..___',
-    3: '...__',
-    4: '...._',
+    t: '-',
+    u: '..-',
+    v: '...-',
+    w: '.--',
+    x: '-..-',
+    y: '-.--',
+    z: '--..',
+    0: '-----',
+    1: '.----',
+    2: '..---',
+    3: '...--',
+    4: '....-',
     5: '.....',
-    6: '_....',
-    7: '__...',
-    8: '___..',
-    9: '____.',
+    6: '-....',
+    7: '--...',
+    8: '---..',
+    9: '----.',
+    ' ': '    ',
+}];
+
+const alphabet = [{
+    "-----": "0",
+    ".----": "1",
+    "..---": "2",
+    "...--": "3",
+    "....-": "4",
+    ".....": "5",
+    "-....": "6",
+    "--...": "7",
+    "---..": "8",
+    "----.": "9",
+    ".-": "a",
+    "-...": "b",
+    "-.-.": "c",
+    "-..": "d",
+    ".": "e",
+    "..-.": "f",
+    "--.": "g",
+    "....": "h",
+    "..": "i",
+    ".---": "j",
+    "-.-": "k",
+    ".-..": "l",
+    "--": "m",
+    "-.": "n",
+    "---": "o",
+    ".--.": "p",
+    "--.-": "q",
+    ".-.": "r",
+    "...": "s",
+    "-": "t",
+    "..-": "u",
+    "...-": "v",
+    ".--": "w",
+    "-..-": "x",
+    "-.--": "y",
+    "--..": "z",
+    "/": " ",
+    "-·-·--": "!",
+    "·-·-·-": ".",
+    "--··--": ",",
+    ' ': '    ',
 }];
 
 const convertText = () => {
-    const textInput = document.getElementById('text-input').value.toLowerCase();
-    const arrayOfLetters = textInput.split("");
+    if (inputHeader.innerHTML.includes('Text')) {
+        const textInput = document.getElementById('text-input').value.toLowerCase();
+        const arrayOfLetters = textInput.split('');
+        console.log(arrayOfLetters)
+        const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
+        output.innerHTML = arrayInMorse.join('');
+    } else {
+        const textInput = document.getElementById('text-input').value.toLowerCase();
+        const arrayOfLetters = textInput.split('');
 
-    const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
-    output.innerHTML = arrayInMorse.join('');
+        const arrayInText = arrayOfLetters.map(getTextValue);
+        output.innerHTML = arrayInText.join('');
+    }
 }
 
 const getMorseCodeValue = (letter) => {
-    console.log(morseCode[0][letter])
-    return letter = morseCode[0][letter]
+    return morseCode[0][letter];
+}
+
+const getTextValue = (character) => {
+    return alphabet[0][character];
+}
+
+const switchInput = () => {
+    const headerOne = inputHeader.innerHTML;
+    const headerTwo = outputHeader.innerHTML;
+    inputHeader.innerHTML = headerTwo;
+    outputHeader.innerHTML = headerOne;
 }

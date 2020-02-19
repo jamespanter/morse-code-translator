@@ -36,6 +36,8 @@ main input {
   font-size: 24px;
   width: 300px;
   height: 70px;
+  margin-bottom: 10px;
+  border: solid 1px black;
 }
 
 main button {
@@ -47,6 +49,15 @@ main button {
 
 main button:hover {
   background-color: beige;
+}
+
+main button#switch-button {
+  width: 30%;
+}
+
+main button span {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 main p {
