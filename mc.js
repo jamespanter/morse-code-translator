@@ -88,7 +88,7 @@ const alphabet = [{
     '/': ' ',
 }];
 
-const convertText = () => {
+window.addEventListener('keyup', () => {
     if (inputHeader.innerHTML.includes('TEXT')) {
         let textInput = document.getElementById('text-input').value.toLowerCase();
         const arrayOfLetters = textInput.split('');
@@ -104,7 +104,7 @@ const convertText = () => {
         console.log(arrayInText);
         output.innerHTML = arrayInText.join('');
     }
-}
+})
 
 const getMorseCodeValue = letter => morseCode[0][letter];
 const getTextValue = character => alphabet[0][character];
@@ -121,14 +121,4 @@ const switchInput = () => {
         instructionInput.classList.remove('shown');
     }
 
-
-    // let textInput = document.getElementById('text-input').value.toLowerCase();
-    // console.log(textInput)
-    // const inputContent = textInput;
-    // const outputContent = output.innerHTML;
-
-    // textInput = outputContent;
-    // output.innerHTML = inputContent;
-
-    // console.log(inputContent, outputContent)
 }
