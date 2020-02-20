@@ -89,13 +89,12 @@ const alphabet = [{
 }];
 
 window.addEventListener('keyup', () => {
+    let textInput = document.getElementById('text-input').value.toLowerCase();
     if (inputHeader.innerHTML.includes('TEXT')) {
-        let textInput = document.getElementById('text-input').value.toLowerCase();
         const arrayOfLetters = textInput.split('');
         const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
         output.innerHTML = arrayInMorse.join('&nbsp');
     } else {
-        const textInput = document.getElementById('text-input').value.toLowerCase();
         let arrayOfLetters = textInput.split(' ');
         const arrayInText = arrayOfLetters.map(getTextValue);
         output.innerHTML = arrayInText.join('');
@@ -106,10 +105,10 @@ const getMorseCodeValue = letter => morseCode[0][letter];
 const getTextValue = character => alphabet[0][character];
 
 const switchInput = () => {
-    const headerOne = inputHeader.innerHTML;
-    const headerTwo = outputHeader.innerHTML;
-    inputHeader.innerHTML = headerTwo;
-    outputHeader.innerHTML = headerOne;
+    const headerOneStorage = inputHeader.innerHTML;
+    const headerTwoStorage = outputHeader.innerHTML;
+    inputHeader.innerHTML = headerTwoStorage;
+    outputHeader.innerHTML = headerOneStorage;
     let textInput = document.getElementById('text-input');
 
     if (inputHeader.innerHTML.includes('MORSE')) {
