@@ -24,10 +24,18 @@ body {
 }
 
 main {
+  width: 500px;
+  height: 700px;
   text-align: center;
-  border: solid 2px black;
+  border: solid 3px black;
   padding: 15px;
   border-radius: 10px;
+}
+
+main h2 {
+  padding: 20px 0;
+  border-bottom: solid 2px black;
+  font-weight: 900;
 }
 
 main input {
@@ -36,10 +44,26 @@ main input {
   font-family: 'Raleway', sans-serif;
   padding: 5px;
   font-size: 24px;
-  width: 300px;
+  width: 100%;
   height: 70px;
   margin-bottom: 10px;
   border: solid 1px black;
+}
+
+main input::-webkit-input-placeholder {
+  color: grey;
+}
+
+main input:-ms-input-placeholder {
+  color: grey;
+}
+
+main input::-ms-input-placeholder {
+  color: grey;
+}
+
+main input::placeholder {
+  color: grey;
 }
 
 main button {
@@ -55,20 +79,28 @@ main button:hover {
 }
 
 main button#switch-button {
-  width: 30%;
+  width: 20%;
 }
 
 main button span {
+  font-size: 32px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  color: grey;
+}
+
+main button span:hover {
+  color: black;
 }
 
 main #output {
   padding: 5px;
-  height: 70px;
+  width: 100%;
+  height: 170px;
   border: solid 1px black;
-  font-size: 24px;
+  font-size: 32px;
   border-radius: 10px;
+  overflow-wrap: break-word;
 }
 
 main #input-instructions {

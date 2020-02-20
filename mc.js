@@ -93,15 +93,11 @@ window.addEventListener('keyup', () => {
         let textInput = document.getElementById('text-input').value.toLowerCase();
         const arrayOfLetters = textInput.split('');
         const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
-        console.log(arrayInMorse)
         output.innerHTML = arrayInMorse.join('&nbsp');
     } else {
         const textInput = document.getElementById('text-input').value.toLowerCase();
-        console.log(textInput)
         let arrayOfLetters = textInput.split(' ');
-        console.log(arrayOfLetters)
         const arrayInText = arrayOfLetters.map(getTextValue);
-        console.log(arrayInText);
         output.innerHTML = arrayInText.join('');
     }
 })
@@ -114,11 +110,13 @@ const switchInput = () => {
     const headerTwo = outputHeader.innerHTML;
     inputHeader.innerHTML = headerTwo;
     outputHeader.innerHTML = headerOne;
+    let textInput = document.getElementById('text-input');
 
     if (inputHeader.innerHTML.includes('MORSE')) {
         instructionInput.classList.add('shown');
     } else {
         instructionInput.classList.remove('shown');
     }
-
+    output.innerHTML = '';
+    textInput.value = '';
 }
