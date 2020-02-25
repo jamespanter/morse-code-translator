@@ -3,7 +3,7 @@ const output = document.getElementById('output'),
 let inputHeader = document.getElementById('input-header'),
     outputHeader = document.getElementById('output-header');
 
-const morseCode = [{
+const morseCode = {
     a: '.-',
     b: '-...',
     c: '-.-.',
@@ -41,9 +41,9 @@ const morseCode = [{
     8: '---..',
     9: '----.',
     ' ': '    ',
-}];
+};
 
-const alphabet = [{
+const alphabet = {
     "-----": "0",
     ".----": "1",
     "..---": "2",
@@ -86,7 +86,7 @@ const alphabet = [{
     "--··--": ",",
     ' ': '    ',
     '/': ' ',
-}];
+};
 
 window.addEventListener('keyup', () => {
     let textInput = document.getElementById('text-input').value.toLowerCase();
@@ -101,8 +101,8 @@ window.addEventListener('keyup', () => {
     }
 })
 
-const getMorseCodeValue = letter => morseCode[0][letter];
-const getTextValue = character => alphabet[0][character];
+const getMorseCodeValue = letter => morseCode[letter];
+const getTextValue = character => alphabet[character];
 
 const switchInput = () => {
     const headerOneStorage = inputHeader.innerHTML;
