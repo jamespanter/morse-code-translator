@@ -8,24 +8,44 @@
 body {
   font-family: "Roboto", arial, sans-serif;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header {
   margin-bottom: 20px;
-  border-bottom: solid 1px #e0e0e0;
-  color: #96989b;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+  color: #5f6368;
+  width: 90%;
+  max-width: 1200px;
 }
 
 header h1 {
   font-weight: 100;
-  font-size: 28px;
+  font-size: 24px;
   margin: 15px 0;
-  padding-left: 5%;
+}
+
+header h1 span {
+  font-weight: 550;
+  font-family: sans-serif;
 }
 
 main {
   margin: 0 auto;
   width: 90%;
+  max-width: 1200px;
 }
 
 main .instructions {
@@ -55,6 +75,7 @@ main .both-sides {
 }
 
 main .both-sides .headers {
+  border-radius: 8px 8px 0 0;
   height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,7 +86,9 @@ main .both-sides .headers {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: solid 1px blue;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.22);
+          box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.22);
 }
 
 main .both-sides .headers button {
@@ -75,6 +98,10 @@ main .both-sides .headers button {
   height: 100%;
   border: none;
   background-color: white;
+}
+
+main .both-sides .headers button:focus {
+  outline: 0;
 }
 
 main .both-sides .headers button:hover span {
@@ -94,7 +121,8 @@ main .both-sides .headers h2 {
   padding: 0 25px;
   color: #4284f3;
   width: 50%;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 550;
 }
 
 main .both-sides .input-containers {
@@ -115,7 +143,14 @@ main .both-sides .input-containers .side {
   width: 100%;
 }
 
+main .both-sides .input-containers .side #text-input {
+  border-radius: 0px 0px 0 8px;
+  -webkit-box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.22);
+          box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.22);
+}
+
 main .both-sides .input-containers .side textarea {
+  border: none;
   font-family: "Raleway", sans-serif;
   padding: 5px;
   font-size: 24px;
@@ -124,6 +159,26 @@ main .both-sides .input-containers .side textarea {
   overflow: auto hidden;
   resize: none;
   outline: none;
+}
+
+main .both-sides .input-containers .side textarea::-webkit-input-placeholder {
+  color: #878787;
+  font-family: "Roboto", arial, sans-serif;
+}
+
+main .both-sides .input-containers .side textarea:-ms-input-placeholder {
+  color: #878787;
+  font-family: "Roboto", arial, sans-serif;
+}
+
+main .both-sides .input-containers .side textarea::-ms-input-placeholder {
+  color: #878787;
+  font-family: "Roboto", arial, sans-serif;
+}
+
+main .both-sides .input-containers .side textarea::placeholder {
+  color: #878787;
+  font-family: "Roboto", arial, sans-serif;
 }
 
 main .both-sides .input-containers .side #text-input,
@@ -136,6 +191,12 @@ main .both-sides .input-containers .side #output {
   background-color: #f5f5f5;
   font-size: 24px;
   overflow-wrap: break-word;
+  border-radius: 0px 0px 8px 0;
+}
+
+main .both-sides .input-containers .side p:empty:not(:focus)::before {
+  content: attr(data-placeholder);
+  color: #878787;
 }
 
 main .both-sides .input-containers .side #input-instructions {
