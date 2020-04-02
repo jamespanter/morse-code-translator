@@ -88,8 +88,9 @@ const alphabet = {
   "/": " "
 };
 
-window.addEventListener("keyup", () => {
+const translate = () => {
   let textInput = document.getElementById("text-input").value.toLowerCase();
+
   if (inputHeader.innerHTML.includes("ENGLISH")) {
     const arrayOfLetters = textInput.split("");
     const arrayInMorse = arrayOfLetters.map(getMorseCodeValue);
@@ -99,9 +100,10 @@ window.addEventListener("keyup", () => {
     const arrayInText = arrayOfLetters.map(getTextValue);
     output.innerHTML = arrayInText.join("");
   }
-});
+};
 
 const getMorseCodeValue = letter => morseCode[letter];
+
 const getTextValue = character => alphabet[character];
 
 const switchInput = () => {
@@ -109,13 +111,26 @@ const switchInput = () => {
   const headerTwoStorage = outputHeader.innerHTML;
   inputHeader.innerHTML = headerTwoStorage;
   outputHeader.innerHTML = headerOneStorage;
-  let textInput = document.getElementById("text-input");
 
   if (inputHeader.innerHTML.includes("MORSE")) {
     instructionInput.classList.add("shown");
   } else {
     instructionInput.classList.remove("shown");
   }
-  output.innerHTML = "";
-  textInput.value = "";
+
+  let textInput = document.getElementById("text-input");
+  let outputText = document.getElementById("output").innerHTML;
+
+  let i = 0,
+    strLength = outputText.length;
+
+  for (i; i < strLength; i++) {
+    outputText = outputText.replace("    ", " / ");
+    outputText = outputText.replace("&nbsp;", " ");
+  }
+
+  textInput.value = outputText;
+  translate();
 };
+
+window.addEventListener("keyup", translate);
