@@ -37,17 +37,30 @@ main {
   width: 90%;
   max-width: 1200px;
 
-  .instructions {
-    margin-top: 30px;
+  #instructions {
+    font-size: 24px;
+    display: none;
+    width: 50%;
+    margin: 30px auto 0;
+
+    h3 {
+      color: #4284f3;
+    }
 
     p {
       margin-top: 30px;
     }
 
     img {
-      margin-top: 30px;
+      margin-top: 15px;
+      height: 300px;
+    }
 
-      height: 500px;
+    &.shown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -148,14 +161,6 @@ main {
         p:empty:not(:focus)::before {
           content: attr(data-placeholder);
           color: #878787;
-        }
-
-        #input-instructions {
-          display: none;
-
-          &.shown {
-            display: block;
-          }
         }
       }
     }
