@@ -2,32 +2,52 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mc.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morse Code Translator</title>
-    <script src="mc.js" async defer></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="mc.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Google Morse Code Translator</title>
+	<script src="mc.js" async defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Morse Code Translator</h1>
-    </header>
-    <main>
-        <h2 id="input-header">TEXT</h2>
-        <p id="input-instructions"><strong>SPACE</strong> after letters.
-            </br> <strong>SLASH</strong> between
-            words</p>
-        <input type="text" placeholder="enter characters" id="text-input">
-        </br>
-        <button onclick="switchInput()" id="switch-button">
-            <span class="fas fa-exchange-alt"></span>
-        </button>
-        <h2 id="output-header">MORSE CODE</h2>
-        <p id="output"></p>
-    </main>
+	<header>
+		<h1>Google Morse Code Translator</h1>
+	</header>
+
+	<main>
+		<div class=both-sides>
+			<div class=headers>
+				<h2 id="input-header">TEXT</h2>
+				<button onclick="switchInput()" id="switch-button">
+					<span class="fas fa-exchange-alt"></span>
+				</button>
+				<h2 id="output-header">MORSE CODE</h2>
+			</div>
+
+			<div class="input-containers">
+				<div class="side">
+
+					<input type="text" placeholder="enter characters" id="text-input">
+				</div>
+				<div class="side">
+					<p id="output">Translation</p>
+				</div>
+			</div>
+		</div>
+		<div class="instructions">
+			<h3>Instructions:</h3>
+			<p id="input-instructions">When entering Morse Code:
+				<br>
+				<br>
+				Enter a SPACE after letters.
+				<br>
+				SLASH between words
+			</p>
+			<img src="morsecode.png.png" alt="">
+		</div>
+	</main>
 </body>
 
 </html>
