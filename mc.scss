@@ -38,10 +38,10 @@ main {
   max-width: 1200px;
 
   #instructions {
-    font-size: 24px;
+    font-size: 18px;
     display: none;
-    width: 50%;
-    margin: 30px auto 0;
+    width: 100%;
+    margin: 20px auto 0;
 
     h3 {
       color: #4284f3;
@@ -52,7 +52,6 @@ main {
     }
 
     img {
-      margin-top: 15px;
       height: 300px;
     }
 
@@ -60,7 +59,7 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: baseline;
     }
   }
 
@@ -106,6 +105,7 @@ main {
       }
 
       h2 {
+        text-align: center;
         padding: 0 10px;
         color: #4284f3;
         width: 50%;
@@ -169,10 +169,11 @@ main {
 @media only screen and (min-width: 600px) {
   main {
     .both-sides {
-      .header {
+      .headers {
         h2 {
           font-size: 18px;
           padding: 0 25px;
+          text-align: left;
         }
       }
       .input-containers {

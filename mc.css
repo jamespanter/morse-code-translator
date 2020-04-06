@@ -49,10 +49,10 @@ main {
 }
 
 main #instructions {
-  font-size: 24px;
+  font-size: 18px;
   display: none;
-  width: 50%;
-  margin: 30px auto 0;
+  width: 100%;
+  margin: 20px auto 0;
 }
 
 main #instructions h3 {
@@ -64,7 +64,6 @@ main #instructions p {
 }
 
 main #instructions img {
-  margin-top: 15px;
   height: 300px;
 }
 
@@ -79,9 +78,9 @@ main #instructions.shown {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 main .both-sides {
@@ -141,6 +140,7 @@ main .both-sides .headers button span {
 }
 
 main .both-sides .headers h2 {
+  text-align: center;
   padding: 0 10px;
   color: #4284f3;
   width: 50%;
@@ -226,9 +226,10 @@ main .both-sides .input-containers .side p:empty:not(:focus)::before {
 }
 
 @media only screen and (min-width: 600px) {
-  main .both-sides .header h2 {
+  main .both-sides .headers h2 {
     font-size: 18px;
     padding: 0 25px;
+    text-align: left;
   }
   main .both-sides .input-containers {
     -webkit-box-orient: horizontal;
